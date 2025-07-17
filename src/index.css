@@ -1,0 +1,91 @@
+@import url('https://fonts.googleapis.com/css2?family=Segoe+UI:wght@400;600&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    /* PowerPoint Brand Colors */
+    --powerpoint-red: 216 83% 43%;
+    --powerpoint-blue: 207 90% 42%;
+    --powerpoint-gray: 0 0% 96%;
+    --powerpoint-dark-gray: 0 0% 20%;
+    --powerpoint-border: 0 0% 85%;
+    
+    /* Base Colors */
+    --background: 0 0% 100%;
+    --foreground: 0 0% 20%;
+    --card: 0 0% 100%;
+    --card-foreground: 0 0% 20%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 0 0% 20%;
+    --primary: 216 83% 43%;
+    --primary-foreground: 0 0% 98%;
+    --secondary: 0 0% 96%;
+    --secondary-foreground: 0 0% 20%;
+    --muted: 0 0% 96%;
+    --muted-foreground: 0 0% 45%;
+    --accent: 207 90% 42%;
+    --accent-foreground: 0 0% 98%;
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 98%;
+    --border: 0 0% 85%;
+    --input: 0 0% 100%;
+    --ring: 216 83% 43%;
+    --radius: 2px;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  
+  body {
+    @apply bg-background text-foreground;
+
+    font-family: 'Segoe UI', -apple-system, BlinkMacSystemFont, sans-serif;
+    font-size: 11px;
+    overflow: hidden;
+  }
+  
+  /* PowerPoint specific styles */
+  .powerpoint-button {
+    @apply inline-flex items-center justify-center rounded-sm px-2 py-1 text-xs font-normal;
+    @apply bg-transparent hover:bg-gray-100 active:bg-gray-200;
+    @apply border border-transparent hover:border-gray-300;
+    @apply transition-all duration-75;
+  }
+  
+  .powerpoint-button.active {
+    @apply bg-blue-100 border-blue-300;
+  }
+  
+  .ribbon-tab {
+    @apply px-4 py-2 text-xs font-normal cursor-pointer;
+    @apply border-b-2 border-transparent hover:bg-gray-50;
+    @apply transition-all duration-75;
+  }
+  
+  .ribbon-tab.active {
+    @apply border-b-2 border-orange-500 bg-white;
+  }
+  
+  .ribbon-group {
+    @apply flex flex-col items-center px-3 py-2 border-r border-gray-200;
+  }
+  
+  .ribbon-group:last-child {
+    @apply border-r-0;
+  }
+  
+  .slide-thumbnail {
+    @apply w-16 h-12 bg-white border border-gray-300 rounded-sm cursor-pointer;
+    @apply hover:border-blue-400 transition-colors duration-75;
+  }
+  
+  .slide-thumbnail.active {
+    @apply border-2 border-orange-500;
+  }
+}
